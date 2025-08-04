@@ -4,10 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineChevronRight } from "react-icons/hi";
 
+
+import { useState, useRef } from "react";
+
 const ContactPage = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Thank you! We'll get back to you shortly.");
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
@@ -74,7 +84,7 @@ const ContactPage = () => {
                 We would love to hear from you! Please fill out the form below
                 or reach us via email or phone.
               </p>
-              <form className="space-y-4" onSubmit={handleSubmit}>
+              <form className="space-y-4" onSubmit={handleSubmit} ref={formRef}>
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -98,6 +108,11 @@ const ContactPage = () => {
                 >
                   Send Message
                 </button>
+                {submitted && (
+                  <div className="mt-4 text-green-600 font-semibold text-center">
+                    Successfully sent message!
+                  </div>
+                )}
               </form>
             </div>
           </div>
