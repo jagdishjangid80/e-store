@@ -1,13 +1,15 @@
+// src/app/page.js
 import Image from "next/image";
-import Homepage from './home/Page';
-import Productpage from './products/Page';
-import Review from './review/Page';
-import Shipping from './shipping/Page';
+import Herosection from '../components/HeroSection';
+import Productpage from './(frontend)/products/Page';
+import Review from './(frontend)/review/Page';
+import Shipping from './(frontend)/shipping/Page';
 
 export default function Home() {
   return (
    <>
-     <Homepage/>
+    
+     <Herosection/>
      <Productpage/>
      <Review/>
      <Shipping/>

@@ -12,7 +12,7 @@ const Page = () => {
           alt="About Us background"
           fill
           className="object-cover z-0"
-          priority
+          priority={false}
         />
         <div className="absolute z-10 flex flex-col items-center justify-center text-center">
           <h1

@@ -32,7 +32,7 @@ const ContactPage = () => {
             className="object-cover z-0"
             priority
           />
-          <div className="absolute inset-0 bg-white/60 z-10" />
+          <div className="absolute inset-0  z-10" />
           <div className="absolute z-20 flex flex-col items-center justify-center text-center w-full">
             <h1
               id="blog-heading"
